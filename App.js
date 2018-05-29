@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
 import { Screen1 } from './react-components/Screen1';
+import { Screen2 } from './react-components/Screen2';
 import { Wrapper } from './react-components/Wrapper';
 
 const hintStyle = {
@@ -21,10 +22,12 @@ const App = (props) => {
         return (
             <Wrapper>
                 <ScrollView horizontal={true} pagingEnabled={true}>
-                    <Wrapper backgroundColor={'blue'}>
-                        <Screen1/>
+
+                    <Wrapper backgroundColor={'#B156B9'}>
+                        <Screen2 />
                     </Wrapper>
-                    <Wrapper backgroundColor={'#7876E6'}>
+                    <Wrapper backgroundColor={'blue'}>
+                        <Screen1 />
                     </Wrapper>
                     <Wrapper backgroundColor={'#B156B9'}>
                     </Wrapper>
