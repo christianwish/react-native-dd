@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StyleSheet, Text, View, Animated, Easing } from 'react-native';
+import { Text, Animated, Easing } from 'react-native';
 
 const { timing, sequence } = Animated;
 
