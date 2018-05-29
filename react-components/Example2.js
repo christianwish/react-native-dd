@@ -1,23 +1,45 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Text, Animated, Easing } from 'react-native';
+import { Text, Animated, Easing, View } from 'react-native';
 
 const { timing, sequence } = Animated;
 
 const ANIMATED_TOP_MARGIN = 80;
 const ANIMATED_HEIGHT = 60;
 
-const BASE_STYLE = {
-    width: 4,
-    height: 100,
+const pointerStyle = {
+    width: 1,
+    height: 240,
     borderRadius: 50,
-    backgroundColor: '#09f',
+    backgroundColor: '#fff',
 };
 
-const TEXT_STYLE = {
-    textAlign: 'center',
-    fontSize: 20,
-}
+const pointerInner = {
+    position: 'absolute',
+    height: 240,
+    width: 240,
+    right: 0,
+    top: 0,
+    backgroundColor: '#fff',
+};
+
+const outerStyle = {
+    width: 250,
+    height: 120,
+    overflow: 'hidden',
+};
+
+const innerStyle = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 240,
+    overflow: 'hidden',
+    borderRadius: 300,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+};
 
 const animationSettings = {
     easing: Easing.inOut(Easing.ease),
@@ -51,13 +73,18 @@ export const Example2 = (props) => {
         });
 
         const style = {
-            ...BASE_STYLE,
+            ...pointerStyle,
             transform: [{ rotate: deg }],
         };
 
         return (
-            <Animated.View style={style}>
-            </Animated.View>
+            <View style={outerStyle}>
+            <View style={innerStyle}>
+                <Animated.View style={style}>
+                    <View style={pointerInner} />
+                </Animated.View>
+            </View>
+            </View>
         );
     };
 

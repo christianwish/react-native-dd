@@ -28,7 +28,8 @@ const styles = {
         fontSize: 30,
     },
     question: {
-        color: '#111',
+        color: '#fff',
+        fontWeight: '900',
         fontSize: 18,
         marginLeft: 30,
         marginRight: 30,
@@ -61,10 +62,10 @@ export const Screen2 = (props) => {
                 <View style={styles.container}>
                     <Text style={styles.h1}>Example 2</Text>
                     <Text style={styles.h2}>Rating ({ ($.state.stars) })</Text>
-                    <Text style={styles.question}>Und? Wie wars?</Text>
                 </View>
                 <View style={styles.container}>
                     <Example2 stars={ $.state.stars } />
+                    <Text style={styles.question}>Und? Wie wars?</Text>
                 </View>
                 <View style={{ ...styles.container, flexDirection: 'row' }}>
                     {
