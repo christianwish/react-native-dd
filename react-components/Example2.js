@@ -97,8 +97,6 @@ export const Example2 = (props) => {
             outputRange: ['0deg', '360deg']
         });
 
-        console.log(deg);
-
         const style = {
             ...pointerStyle,
             transform: [{ rotate: deg }],
