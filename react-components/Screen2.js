@@ -65,7 +65,6 @@ export const Screen2 = (props) => {
                 </View>
                 <View style={styles.container}>
                     <Example2 stars={ $.state.stars } />
-                    <Text style={styles.question}>Und? Wie wars?</Text>
                 </View>
                 <View style={{ ...styles.container, flexDirection: 'row' }}>
                     {

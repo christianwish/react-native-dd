@@ -41,10 +41,35 @@ const innerStyle = {
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
 };
 
-const animationSettings = {
-    easing: Easing.inOut(Easing.ease),
-    duration: 200,
+const faceStyle = {
+    fontSize: 60,
+    marginTop: 20,
 };
+
+const msgStyle = {
+    color: '#CBA42F',
+    fontWeight: '900',
+    fontSize: 18,
+    marginLeft: 30,
+    marginRight: 30,
+    marginTop: 30,
+    textAlign: 'center',
+};
+
+const animationSettings = {
+    easing: Easing.bounce,
+    duration: 500,
+};
+
+const faceArray = ['🤔', '☹️', '😒', '🙂', '😃', '😍'];
+const msgArray = [
+    'Und? Wie wars?',
+    'Frag lieber nicht!',
+    'Naaaja...',
+    'Kann man machen.',
+    'Echt erquickend!',
+    '#einfachWOW',
+];
 
 const calcDeg = stars => ((180 / 5) * stars - 90);
 
@@ -72,19 +97,25 @@ export const Example2 = (props) => {
             outputRange: ['0deg', '360deg']
         });
 
+        console.log(deg);
+
         const style = {
             ...pointerStyle,
             transform: [{ rotate: deg }],
         };
 
         return (
-            <View style={outerStyle}>
-            <View style={innerStyle}>
-                <Animated.View style={style}>
-                    <View style={pointerInner} />
-                </Animated.View>
-            </View>
-            </View>
+            <React.Fragment>
+                <View style={outerStyle}>
+                    <View style={innerStyle}>
+                        <Animated.View style={style}>
+                            <View style={pointerInner} />
+                        </Animated.View>
+                    </View>
+                </View>
+                <Text style={faceStyle}>{faceArray[$.props.stars]}</Text>
+                <Text style={msgStyle}>{msgArray[$.props.stars]}</Text>
+            </React.Fragment>
         );
     };
 

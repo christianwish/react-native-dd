@@ -22,12 +22,11 @@ const App = (props) => {
         return (
             <Wrapper>
                 <ScrollView horizontal={true} pagingEnabled={true}>
-
-                    <Wrapper backgroundColor={'#B156B9'}>
-                        <Screen2 />
-                    </Wrapper>
                     <Wrapper backgroundColor={'blue'}>
                         <Screen1 />
+                    </Wrapper>
+                    <Wrapper backgroundColor={'#F7DA82'}>
+                        <Screen2 />
                     </Wrapper>
                     <Wrapper backgroundColor={'#B156B9'}>
                     </Wrapper>
