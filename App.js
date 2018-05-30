@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
+import { StartScreen } from './react-components/StartScreen';
+import { Experiment } from './react-components/Experiment';
 import { Screen1 } from './react-components/Screen1';
 import { Screen2 } from './react-components/Screen2';
 import { Screen3 } from './react-components/Screen3';
@@ -14,12 +16,6 @@ const hintStyle = {
     bottom: 50,
 };
 
-const hiStyle = {
-    color: '#777',
-    fontWeight: '600',
-    fontSize: 50,
-};
-
 const App = (props) => {
     const $ = {
         ...React.Component.prototype,
@@ -31,7 +27,8 @@ const App = (props) => {
             <Wrapper>
                 <ScrollView horizontal={true} pagingEnabled={true}>
                     <Wrapper backgroundColor={'#fff'}>
-                        <Text style={hiStyle}>Hi!</Text>
+                        <Experiment />
+                        <StartScreen />
                     </Wrapper>
                     <Wrapper backgroundColor={'blue'}>
                         <Screen1 />
