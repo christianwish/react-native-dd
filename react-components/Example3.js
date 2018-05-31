@@ -20,6 +20,7 @@ export const Example3 = (props) => {
         ...React.Component.prototype,
         props,
         state: {
+            updater: 0,
             c1: new Animated.Value(0),
             c2: new Animated.Value(0),
             c3: new Animated.Value(0),
@@ -27,10 +28,12 @@ export const Example3 = (props) => {
         },
     };
 
-    $.state.c1.addListener(() => $.forceUpdate());
-    $.state.c2.addListener(() => $.forceUpdate());
-    $.state.c3.addListener(() => $.forceUpdate());
-    $.state.c4.addListener(() => $.forceUpdate());
+    const update = () => $.setState({ updater: $.state.updater ? 0 : 1 });
+
+    $.state.c1.addListener(update);
+    $.state.c2.addListener(update);
+    $.state.c3.addListener(update);
+    $.state.c4.addListener(update);
 
     const makeAnim = () => sequence([
         timing($.state.c1, { ...animationSettings, toValue: 100 }),
